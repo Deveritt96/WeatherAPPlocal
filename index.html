@@ -9,7 +9,7 @@
       theme: {
         extend: {
           colors: {
-            dark: '#CF6679',
+            dark: '#121212',
           }
         }
       }
@@ -17,12 +17,41 @@
   </script>
 </head>
 <body class='bg-zinc-900 text-slate-50 font-mono'>
-  <h1 class='flex justify-between text-5xl bg-purple-500 p-2'>
+  <h1 class='flex justify-between text-5xl bg-purple-900 p-2'>
     <ul class="basis-6/12">WEATHER DASHBOARD</ul>
-    <form>
+    <form id="searchForm">
       <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl p-1"> Search </button>
-    <input class="text-xl text-zinc-900" for="search" type="text" placeholder="Enter zip code" id="zip-code"></input>
+    <input class="text-xl text-zinc-900" for="search" type="text" placeholder="Enter City Name" id="city"></input>
     </form>
+    <ul>
+      <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl px-1"><</button>
+      <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl px-1"><span id="history"> </span></button>
+      <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl px-1">></button>
+    </ul>
   </h1>
+  <div id="weatherContainer" class="grid grid-cols-1 lg:grid-cols-6 gap-4">
+    <div id="currentWeather" class="lg:col-span-6 bg-dark p-4 text-3xl text-center mb-4">Current Weather</div>
+    <div id="day1" class="lg:col-span-1 bg-dark p-4 text-xl text-center mb-4"> <!-- Placeholder box for Day 1 -->
+      <h3>Day 1</h3>
+      <p>Loading...</p>
+    </div>
+    <div id="day2" class="lg:col-span-1 bg-dark p-4 text-xl text-center mb-4"> <!-- Placeholder box for Day 2 -->
+      <h3>Day 2</h3>
+      <p>Loading...</p>
+    </div>
+    <div id="day3" class="lg:col-span-1 bg-dark p-4 text-xl text-center mb-4"> <!-- Placeholder box for Day 3 -->
+      <h3>Day 3</h3>
+      <p>Loading...</p>
+    </div>
+    <div id="day4" class="lg:col-span-1 bg-dark p-4 text-xl text-center mb-4"> <!-- Placeholder box for Day 4 -->
+      <h3>Day 4</h3>
+      <p>Loading...</p>
+    </div>
+    <div id="day5" class="lg:col-span-1 bg-dark p-4 text-xl text-center mb-4"> <!-- Placeholder box for Day 5 -->
+      <h3>Day 5</h3>
+      <p>Loading...</p>
+    </div>
+  </div>
 </body>
+<script src="/assets/index.js"></script>
 </html>
