@@ -6,7 +6,7 @@ An App to track the weather for the next five days.
 
 ## Screenshot
 
-<img src="Assets\image.png" />
+<img src="assets\image.png" />
 
 
 ## installation
