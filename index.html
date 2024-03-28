@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#CF6679',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class='bg-zinc-900 text-slate-50 font-mono'>
+  <h1 class='flex justify-between text-5xl bg-purple-500 p-2'>
+    <ul class="basis-6/12">WEATHER DASHBOARD</ul>
+    <form>
+      <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl p-1"> Search </button>
+    <input class="text-xl text-zinc-900" for="search" type="text" placeholder="Enter zip code" id="zip-code"></input>
+    </form>
+  </h1>
+</body>
+</html>
