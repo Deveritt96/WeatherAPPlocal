@@ -16,7 +16,7 @@
     }
     </script>
 </head>
-<body class='bg-zinc-900 text-slate-50 font-mono'>
+<body class='bg-zinc-900 text-slate-50 font-mono flex flex-col min-h-screen'>
   <h1 class='flex justify-between text-5xl bg-purple-900 p-2'>
     <ul class="basis-6/12">WEATHER DASHBOARD</ul>
     <form id="searchForm">
@@ -47,10 +47,10 @@
       <p>Loading...</p>
     </div>
   </div>
-  <footer class="bg-dark p-4 text-xl text-center mb-4">
-    <h2>Search History:</h2>
-    <div id="storedCities"></div>
-  </footer>
 </body>
+<footer class="bg-purple-900 p-4 text-xl text-center mt-auto end-0">
+  <h2>Search History:</h2>
+  <div id="storedCities"></div>
+</footer>
 <script src="assets/index.js"></script>
 </html>

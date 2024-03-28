@@ -2,11 +2,38 @@ document.getElementById("searchForm").addEventListener("submit", function (event
     event.preventDefault();
     const city = document.getElementById("city").value;
     fetchWeather(city);
-    
-    // Save the city to local storage
-    localStorage.setItem('city', city);
+    saveCityToLocalStorage(city);
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    loadStoredCities();
+});
+
+function loadStoredCities() {
+    const storedCities = JSON.parse(localStorage.getItem('cities')) || [];
+    const storedCitiesContainer = document.getElementById('storedCities');
+    storedCitiesContainer.innerHTML = '';
+    storedCities.forEach(city => {
+        const cityLink = document.createElement('a');
+        cityLink.href = '#';
+        cityLink.textContent = city;
+        cityLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            fetchWeather(city);
+        });
+        storedCitiesContainer.appendChild(cityLink);
+        storedCitiesContainer.appendChild(document.createElement('br'));
+    });
+}
+
+function saveCityToLocalStorage(city) {
+    let cities = JSON.parse(localStorage.getItem('cities')) || [];
+    if (!cities.includes(city)) {
+        cities.push(city);
+        localStorage.setItem('cities', JSON.stringify(cities));
+        loadStoredCities();
+    }
+};
 
 function fetchWeather(city) {
     const apiKey = 'f2046faa5fb1f80c64e26de7f08054f2'; // Replace with your API key
