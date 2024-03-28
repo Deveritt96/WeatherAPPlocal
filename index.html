@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -14,20 +14,15 @@
         }
       }
     }
-  </script>
+    </script>
 </head>
 <body class='bg-zinc-900 text-slate-50 font-mono'>
   <h1 class='flex justify-between text-5xl bg-purple-900 p-2'>
     <ul class="basis-6/12">WEATHER DASHBOARD</ul>
     <form id="searchForm">
       <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl p-1"> Search </button>
-    <input class="text-xl text-zinc-900" for="search" type="text" placeholder="Enter City Name" id="city"></input>
+      <input class="text-xl text-zinc-900" for="search" type="text" placeholder="Enter City Name" id="city"></input>
     </form>
-    <ul>
-      <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl px-1"><</button>
-      <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl px-1"><span id="history"> </span></button>
-      <button class="bg-slate-50 text-zinc-900 rounded-lg text-xl px-1">></button>
-    </ul>
   </h1>
   <div id="weatherContainer" class="grid grid-cols-1 lg:grid-cols-6 gap-4">
     <div id="currentWeather" class="lg:col-span-6 bg-dark p-4 text-3xl text-center mb-4">Current Weather</div>
@@ -52,6 +47,10 @@
       <p>Loading...</p>
     </div>
   </div>
+  <footer class="bg-dark p-4 text-xl text-center mb-4">
+    <h2>Search History:</h2>
+    <div id="storedCities"></div>
+  </footer>
 </body>
-<script src="/assets/index.js"></script>
+<script src="assets/index.js"></script>
 </html>
