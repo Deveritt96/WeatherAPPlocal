@@ -13,6 +13,7 @@ function loadStoredCities() {
     const storedCities = JSON.parse(localStorage.getItem('cities')) || [];
     const storedCitiesContainer = document.getElementById('storedCities');
     storedCitiesContainer.innerHTML = '';
+    storedCities.reverse(); // Reverse the order of stored cities
     storedCities.forEach(city => {
         const cityLink = document.createElement('a');
         cityLink.href = '#';
@@ -24,16 +25,20 @@ function loadStoredCities() {
         storedCitiesContainer.appendChild(cityLink);
         storedCitiesContainer.appendChild(document.createElement('br'));
     });
-}
+};
 
 function saveCityToLocalStorage(city) {
     let cities = JSON.parse(localStorage.getItem('cities')) || [];
     if (!cities.includes(city)) {
+        if (cities.length >= 4) {
+            cities.shift(); // Remove the oldest city
+        }
         cities.push(city);
         localStorage.setItem('cities', JSON.stringify(cities));
         loadStoredCities();
     }
 };
+
 
 function fetchWeather(city) {
     const apiKey = 'f2046faa5fb1f80c64e26de7f08054f2'; // Replace with your API key
